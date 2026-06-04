@@ -65,21 +65,15 @@ This project builds a **production-grade, end-to-end Big Data system** that:
 - At least 16GB RAM recommended
 - At least 20GB free disk space
 
-### 1. Clone the Repository
 
-```bash
-git clone https://github.com/YOUR_USERNAME/z5008-retail-analytics.git
-cd z5008-retail-analytics
-```
-
-### 2. Configure Environment Variables
+### 1. Configure Environment Variables
 
 ```bash
 cp .env.example .env
 # Edit .env if needed (defaults work out of the box)
 ```
 
-### 3. Download Dataset
+### 2. Download Dataset
 
 Download the **Online Retail II** dataset from:
 https://archive.ics.uci.edu/dataset/502/online+retail+ii
@@ -89,7 +83,7 @@ Place the file at:
 data/online_retail_II.csv
 ```
 
-### 4. Start All Services
+### 3. Start All Services
 
 ```bash
 docker-compose up -d
@@ -103,7 +97,7 @@ docker-compose ps
 
 All containers should show **Healthy** or **Running**.
 
-### 5. Open JupyterLab
+### 4. Open JupyterLab
 
 Open your browser and go to:
 ```
@@ -111,7 +105,7 @@ http://localhost:8888
 ```
 Token: `bigdata`
 
-### 6. Run Notebooks in Order
+### 5. Run Notebooks in Order
 
 Run each notebook sequentially:
 
@@ -156,17 +150,17 @@ Run each notebook sequentially:
 z5008-retail-analytics/
 │
 ├── 📓 notebooks/              # Jupyter notebooks (NB1-NB13)
-│   ├── NB1_setup_eda.ipynb
-│   ├── NB2_data_scaling.ipynb
+│   ├── NB1_setup_data_loading.ipynb
+│   ├── NB2_data_scaling_20m.ipynb
 │   ├── NB3_kafka_streaming.ipynb
-│   ├── NB4_delta_lake.ipynb
-│   ├── NB5_spark_processing.ipynb
+│   ├── NB4_delta_lake_storage.ipynb
+│   ├── NB5_spark_batch_processing.ipynb
 │   ├── NB6_ml_training.ipynb
 │   ├── NB7_model_evaluation.ipynb
 │   ├── NB8_sql_analytics.ipynb
-│   ├── NB9_dashboard.ipynb
-│   ├── NB10_rest_api.ipynb
-│   ├── NB11_grafana.ipynb
+│   ├── NB9_realtime_dashboard.ipynb
+│   ├── NB10_model_api.ipynb
+│   ├── NB11_grafana_dashboard.ipynb
 │   ├── NB12_airflow_dag.ipynb
 │   └── NB13_nl_query.ipynb
 │
